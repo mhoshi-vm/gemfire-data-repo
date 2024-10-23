@@ -1,6 +1,7 @@
 package com.example.gemfirelookasidecache;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,13 +17,13 @@ class DemoController {
         this.demoService = demoService;
     }
 
-    @GetMapping
+    @GetMapping("entries")
     List<DemoRecord> getter(){
         return demoService.getter();
     }
 
-    @PostMapping
-    void setter(@RequestParam String aaa){
-        demoService.setter(aaa);
+    @PostMapping("entries/{id}")
+    void setter(@PathVariable("id") Integer id, @RequestParam String aaa){
+        demoService.setter(id,aaa);
     }
 }
