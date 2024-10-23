@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS demo_record
+(
+     demo_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+     aaa TEXT
+);
