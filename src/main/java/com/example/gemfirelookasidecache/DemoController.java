@@ -17,12 +17,12 @@ class DemoController {
     }
 
     @GetMapping
-    List<DemoRecord> getter(){
+    List<DemoEntity> getter() {
         return demoService.getter();
     }
 
     @PostMapping
-    void setter(@RequestParam String aaa){
+    void setter(@RequestParam String aaa) {
         demoService.setter(aaa);
     }
 }
